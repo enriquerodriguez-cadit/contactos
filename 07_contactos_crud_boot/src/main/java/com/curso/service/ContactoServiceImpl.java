@@ -40,5 +40,10 @@ public class ContactoServiceImpl implements ContactoService {
 		contactoDao.save(contacto);
 	}
 
+	@Override
+	public Contacto recuperarPorId(int idContacto) {		
+		return contactoDao.findById(idContacto).orElse(null);
+	}
+
 
 }

@@ -45,4 +45,10 @@ public class ContactoController {
 	public void actualizarContacto(@RequestBody Contacto contacto) {
 		contactoService.actualizarContacto(contacto);
 	}
+	
+	@GetMapping(value="/contactoid/{idContacto}", produces=MediaType.APPLICATION_JSON_VALUE)
+	public Contacto getContacto(@PathVariable("idContacto") int idContacto) {
+		return contactoService.recuperarPorId(idContacto);		
+	}
+	
 }
